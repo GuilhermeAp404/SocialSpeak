@@ -5,11 +5,11 @@ async function connectToDataBase(){
         await mongoose.connect('mongodb://127.0.0.1:27017/socialspeak', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            useCreateIndex: true,
         })
         console.log('Acesso ao MongoDB')
-    }catch{
+    }catch(err){
         console.log('Acesso ao MongoDB foi negado')
+        console.log(err)
         process.exit(1)
     }
 }

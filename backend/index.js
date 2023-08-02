@@ -19,10 +19,14 @@ app.use(cors(corsOptions))
 app.use(express.static('public'))
 
 //routes
+const UsersRoutes = require('./routes/UsersRoutes')
+
 app.get('/', (req, res)=>{
     res.status(200).json({
         message: 'Bem-Vindo!'
     })
 })
+
+app.use('/user', UsersRoutes)
 
 app.listen(5000)
