@@ -1,5 +1,7 @@
 const express = require('express')
+require('dotenv').config()
 const cors = require('cors')
+const path=require('path')
 
 const app = express()
 
@@ -16,7 +18,7 @@ const corsOptions = {
 app.use(cors(corsOptions))
 
 //public folder
-app.use(express.static('public'))
+app.use('/files', express.static(path.resolve(__dirname, '../upload')))
 
 //routes
 const UsersRoutes = require('./routes/UsersRoutes')

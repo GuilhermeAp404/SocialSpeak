@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 async function connectToDataBase(){
     try{
-        await mongoose.connect('mongodb://127.0.0.1:27017/socialspeak', {
+        await mongoose.connect(process.env.DB_URL, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         })
