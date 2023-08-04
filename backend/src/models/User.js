@@ -25,9 +25,6 @@ const User = mongoose.model(
                 unique: true,
                 required: true,
             },
-            rooms:{
-                type:[Object]
-            }
         }, {timestamps: true}
     ),
 )

@@ -173,10 +173,9 @@ module.exports = class UserController{
         }
 
         try{
-            const updateUser = await User.updateOne(
+            await User.updateOne(
                 {_id:user._id},
                 {$set: user},
-                {new: true}
             )
             res.status(200).json({message:'Usuário atualizado com sucesso!'})
         }catch(err){

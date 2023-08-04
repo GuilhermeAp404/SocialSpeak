@@ -22,6 +22,7 @@ app.use('/files', express.static(path.resolve(__dirname, '../upload')))
 
 //routes
 const UsersRoutes = require('./routes/UsersRoutes')
+const RoomsRoutes = require('./routes/RoomsRoutes')
 
 app.get('/', (req, res)=>{
     res.status(200).json({
@@ -30,5 +31,6 @@ app.get('/', (req, res)=>{
 })
 
 app.use('/user', UsersRoutes)
+app.use('/room', RoomsRoutes)
 
 app.listen(5000)

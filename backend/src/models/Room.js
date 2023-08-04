@@ -10,6 +10,9 @@ const Room = mongoose.model(
                 required: true,
                 unique: true,
             },
+            description:{
+                type: String
+            },
             password:{
                 type: String
             },
@@ -18,7 +21,7 @@ const Room = mongoose.model(
                 required: true,
             },
             participants:{
-                type:[{ObjectId}],
+                type:[mongoose.Types.ObjectId],
                 ref:'User'
             }
         },{timestamps:true}
